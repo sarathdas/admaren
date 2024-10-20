@@ -1,9 +1,12 @@
 <div class="story-list">
   <h2>Story List</h2>
-  <ul>
+  <ul *ngIf="stories && stories.length > 0; else noStories">
     <li *ngFor="let story of stories">
       <span class="story-description">{{ story.description }}</span>
       <span class="story-points">{{ story.points }} points</span>
     </li>
   </ul>
+  <ng-template #noStories>
+    <p class="no-data-message">No stories available.</p>
+  </ng-template>
 </div>

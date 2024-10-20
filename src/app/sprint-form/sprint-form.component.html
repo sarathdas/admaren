@@ -13,10 +13,18 @@
 
 <div class="story-list">
   <h2>Sprint Display</h2>
-  <ul>
+  <ul
+    *ngIf="
+      selectedStories && selectedStories.length > 0;
+      else noSelectedStories
+    "
+  >
     <li *ngFor="let story of selectedStories">
       <span class="story-description">{{ story.description }}</span>
       <span class="story-points">{{ story.points }} points</span>
     </li>
   </ul>
+  <ng-template #noSelectedStories>
+    <p class="no-data-message">No stories selected for this sprint.</p>
+  </ng-template>
 </div>
