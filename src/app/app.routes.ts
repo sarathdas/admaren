@@ -22,12 +22,5 @@ export const routes: Routes = [
         (m) => m.SprintFormComponent
       ),
   },
-  {
-    path: 'sprint-list',
-    loadComponent: () =>
-      import('./sprint-display/sprint-display.component').then(
-        (m) => m.SprintDisplayComponent
-      ),
-  },
   { path: '', redirectTo: '/story-form', pathMatch: 'full' },
 ];
