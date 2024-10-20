@@ -1,0 +1,22 @@
+<div class="story-form">
+  <h2>Sprint Form</h2>
+  <input
+    type="number"
+    [(ngModel)]="targetPoints"
+    placeholder="Target Sprint Points"
+  />
+  <button (click)="autoSelectStories()">Auto Select Stories</button>
+  <button (click)="clearStories()">Clear Stories</button>
+  <button (click)="clearSelectedStories()">Clear Selected Stories</button>
+</div>
+<br />
+
+<div class="story-list">
+  <h2>Sprint Display</h2>
+  <ul>
+    <li *ngFor="let story of selectedStories">
+      <span class="story-description">{{ story.description }}</span>
+      <span class="story-points">{{ story.points }} points</span>
+    </li>
+  </ul>
+</div>

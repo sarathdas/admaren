@@ -1,0 +1,82 @@
+@import "../../shared-styles";
+
+.story-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    @include card;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  .story-description {
+    font-weight: bold;
+    color: $text-color;
+    flex-grow: 1;
+  }
+
+  .story-points {
+    background-color: $secondary-color;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    min-width: 60px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .story-list {
+    padding: 10px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .story-points {
+      margin-top: 10px;
+    }
+  }
+}
+
+.story-form {
+  @include card;
+  max-width: 500px;
+  margin: 0 auto;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  input {
+    @include form-input;
+  }
+
+  button {
+    @include button;
+    margin: 5px;
+  }
+}

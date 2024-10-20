@@ -1,0 +1,10 @@
+<div class="story-form">
+  <h2>Add Story</h2>
+  <input
+    type="text"
+    [(ngModel)]="description"
+    placeholder="Story Description"
+  />
+  <input type="number" [(ngModel)]="points" placeholder="Story Points" />
+  <button (click)="addStory()">Add Story</button>
+</div>
